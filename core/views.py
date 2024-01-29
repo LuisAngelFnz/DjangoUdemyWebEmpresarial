@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
 
 # Create your views here.
 def rget(function):
@@ -23,12 +23,12 @@ def about(request):
 def blog(request):
     return render(request, 'core/blog.html')
 
-@rget
 def contact(request):
     return render(request, 'core/contact.html')
 
 @rget
 def sample(request):
+    return HttpResponse('sample')
     return render(request, 'core/sample.html')
 
 @rget
