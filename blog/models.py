@@ -25,4 +25,10 @@ class Post(models.Model):
     update       = models.DateField(verbose_name='Fecha de actualización', auto_now=True)
     create       = models.DateField(verbose_name='Fecha de creación', auto_now_add=True)
 
+    class Meta:
+        verbose_name = 'Post'
+        verbose_name_plural = 'Posts'
+    
+    def __str__(self):
+        return self.title
     
