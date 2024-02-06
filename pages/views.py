@@ -3,7 +3,7 @@ from .models import Page
 from core.libs.corelib import request_get
 
 @request_get
-def page(request, pageid):
+def page(request, pageid, slug_title):
     return render(
         request, 'pages/sample.html', {'page':get_object_or_404(Page, id=pageid)}
     )
