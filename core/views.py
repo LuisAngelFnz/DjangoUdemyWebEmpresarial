@@ -10,12 +10,9 @@ def index(request):
 def about(request):
     return render(request, 'core/about.html')
 
+@request_get
 def contact(request):
     return render(request, 'core/contact.html')
-
-@request_get
-def sample(request):
-    return render(request, 'core/sample.html')
 
 @request_get
 def store(request):
