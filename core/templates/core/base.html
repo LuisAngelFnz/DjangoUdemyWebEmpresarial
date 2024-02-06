@@ -69,24 +69,16 @@
     <footer class="footer text-faded text-center py-5">
     <div class="container">
         <p class="m-0">
-            <a href="#" class="link">
-            <span class="fa-stack fa-lg">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-            </span>
-            </a>
-            <a href="#" class="link">
-            <span class="fa-stack fa-lg">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-            </span>
-            </a>
-            <a href="#" class="link">
-            <span class="fa-stack fa-lg">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-            </span>
-            </a>
+          {% for esocial in SOCIAL %}
+            {% if not esocial.url %}{% else %}
+              <a href="{{esocial.url}}" class="link">
+              <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-{{esocial.key|lower}} fa-stack-1x fa-inverse"></i>
+              </span>
+              </a>
+            {% endif %}
+          {% endfor %}
         </p>
         <p class="m-0 mbt">
             <a href="{% url 'sample' %}" class="link">Política de privacidad</a> ·
