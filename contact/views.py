@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.urls import reverse
 from django.core.mail import EmailMessage
 from .forms import ContactForm
 
@@ -18,9 +19,9 @@ def contact(request):
             )
             try:
                 email.send()
-                return redirect('/contact/?ok')
+                return redirect( reverse('contact')+'?ok')
             except:
-                return redirect('/contact/?fail')
+                return redirect( reverse('contact')+'?fail')
     else:
         objform = ContactForm()
     # objform = ContactForm()
